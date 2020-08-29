@@ -1,7 +1,9 @@
 const express = require('express')
-const { getAll } = require('../controllers/books')
+const { getAll,getDetail } = require('../controllers/books')
 
 const router = express.Router()
-router.get('/getall', getAll)
+router
+.get('/getall', getAll)
+.get('/getdetail/:id',getDetail)
 
 module.exports = router

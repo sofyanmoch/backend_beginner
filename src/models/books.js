@@ -11,6 +11,17 @@ const books = {
                 }
             })
         })
+    },
+    getDetail: (id) => {
+        return new Promise((resolve,reject)=> {
+            db.query(`Select * from books where id='${id}'`,(err,result) => {
+                if(err){
+                    reject(new Error(err))
+                }else{
+                    resolve(result)
+                }
+            })
+        })
     }
 }
 
